@@ -4,12 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#0b0b0c">
+<meta name="description" content="Stephen Hany is a graphic and 3D designer building human, concept-led brand identities, packaging, campaigns and visual systems.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Stephen Hany — Graphic & 3D Designer">
+<meta property="og:description" content="Brand identities, packaging, campaigns and visual systems with a human point of view.">
+<meta name="color-scheme" content="dark">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="alternate icon" href="favicon.svg">
-<title>Stephen Hany Site</title>
+<title>Stephen Hany — Graphic &amp; 3D Designer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Unbounded:wght@600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@600&display=swap">
 <style>
 /* Layout concept: a framed terminal-style window with four pages (root, about, work, contact), a floating pill dock to move between them, and a canvas dot field breathing behind everything. */
 :root{
@@ -33,7 +38,7 @@ html,body{height:100%}
 body{margin:0;padding:10px;background:var(--bg);color:var(--fg);font-family:var(--mono);font-weight:500;-webkit-font-smoothing:antialiased;overflow:hidden}
 a{color:inherit}
 button{font:inherit;color:inherit}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 
 .app{position:relative;height:100%;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--bg);container-type:size;--dir:1}
 #dots{position:absolute;inset:0;width:100%;height:100%;display:block}
@@ -260,46 +265,114 @@ a.card{color:inherit;text-decoration:none;cursor:pointer}
 }
 </style>
 <style>html,body{margin:0;height:100%;background:#0b0b0c}*{box-sizing:border-box}</style>
+
+<style id="apple-layer">
+/* Apple-style layer: continuous rounded shapes, concentric radii, frosted materials, quiet chrome, spring motion */
+:root{--bg:#0b0b0c;--fg:#f5f5f7;--dim:#a1a1a6;--line:rgba(255,255,255,.08);--accent:#ff5b2e;--mono:'Inter',-apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',system-ui,sans-serif;--spring:cubic-bezier(.32,.72,0,1);--ease:var(--spring);--out:var(--spring);--gx:clamp(22px,6vw,100px);--r-card:28px;--r-media:20px;--glass:rgba(44,44,48,.55)}
+html,body{background:#0b0b0c}body{padding:0;overflow:hidden}
+.app{border:0;border-radius:0;background:transparent}
+.app:before,.app:after,.grain,.sweep,.foot{display:none}
+#dots{opacity:.6}.vig{background:radial-gradient(ellipse at 50% 40%,transparent 30%,rgba(8,8,9,.7) 100%)}
+.page{inset:0;padding:clamp(76px,11vh,124px) var(--gx) 140px;scrollbar-width:none;-webkit-mask-image:linear-gradient(#000 calc(100% - 90px),transparent);mask-image:linear-gradient(#000 calc(100% - 90px),transparent)}
+.page::-webkit-scrollbar{display:none}
+.glitch{font-size:clamp(2.5rem,8vw,7.2rem);letter-spacing:-.05em;line-height:1;text-transform:none}
+.glitch::before,.glitch::after{opacity:0;animation:none}
+/* home */
+.page-home{padding-top:clamp(100px,17vh,180px)}
+.hero-kicker{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:500;color:var(--dim)}
+.status-dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+.hero-main{padding:clamp(28px,6vh,64px) 0 0}
+.hero-display{margin:0;font-family:var(--disp);font-size:clamp(3rem,8.4vw,8.4rem);line-height:.98;letter-spacing:-.06em;font-weight:700}
+.hero-display>span{display:block}.hero-display .hero-period{display:inline}.hero-display i{font-family:Georgia,serif;font-weight:400;color:var(--accent);letter-spacing:-.04em}.hero-period{color:var(--accent)}
+.hero-description{max-width:50ch;margin:clamp(22px,4vh,36px) 0 0;font-size:clamp(1rem,1.2vw,1.12rem);line-height:1.7;font-weight:400;color:#b4b4b9}.hero-description strong{color:var(--fg);font-weight:600}
+.hero-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:32px}
+.primary-cta,.text-cta{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:999px;font-size:14px;font-weight:600;text-decoration:none;transition:transform .5s var(--spring),background .3s,color .3s}
+.primary-cta{background:var(--accent);color:#140d0a}.primary-cta:hover{transform:scale(1.04)}.primary-cta:active{transform:scale(.97)}
+.text-cta{background:rgba(255,255,255,.08);color:var(--fg)}.text-cta:hover{background:rgba(255,255,255,.14)}.text-cta span{color:var(--accent)}
+/* audio: a single circle indicator; tap = play/pause; hover reveals volume + next to its left */
+.audio-widget{position:absolute;top:max(18px,env(safe-area-inset-top));right:20px;z-index:12;width:46px;height:46px}
+.snd{position:relative;top:auto;right:auto;display:grid;place-items:center;width:46px;height:46px;padding:0;border:0;border-radius:50%;background:var(--glass);box-shadow:inset 0 0 0 1px rgba(255,255,255,.09),0 10px 34px rgba(0,0,0,.3);-webkit-backdrop-filter:blur(28px) saturate(180%);backdrop-filter:blur(28px) saturate(180%);transition:background .4s var(--spring),transform .5s var(--spring)}
+.snd:hover{background:rgba(62,62,66,.62);border:0;transform:none}.snd:active{transform:scale(.92)}
+.eq{height:14px;gap:2.5px}.eq i{width:2.5px;background:#a1a1a6}.snd.on .eq i{background:var(--accent)}
+.audio-ctrl{position:absolute;right:100%;top:50%;display:flex;align-items:center;padding-right:10px;opacity:0;visibility:hidden;pointer-events:none;transform-origin:100% 50%;transform:translateY(-50%) translateX(14px) scale(.86);filter:blur(8px);transition:opacity .35s var(--spring),transform .55s var(--spring),filter .35s var(--spring),visibility 0s linear .55s}
+.audio-widget.open .audio-ctrl,.audio-widget:has(:focus-visible) .audio-ctrl{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(-50%);filter:none;transition-delay:0s}
+@media(hover:hover){.audio-widget:hover .audio-ctrl{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(-50%);filter:none;transition-delay:0s}}
+.audio-inner{display:flex;align-items:center;gap:6px;height:46px;padding:0 6px 0 18px;border-radius:999px;background:var(--glass);box-shadow:inset 0 0 0 1px rgba(255,255,255,.09),0 10px 34px rgba(0,0,0,.3);-webkit-backdrop-filter:blur(28px) saturate(180%);backdrop-filter:blur(28px) saturate(180%)}
+.vol{display:flex;align-items:center;width:112px;margin:0;padding:0}
+.vol input{--v:60%;-webkit-appearance:none;appearance:none;flex:1;max-width:none;height:20px;margin:0;background:transparent;cursor:pointer}
+.vol input::-webkit-slider-runnable-track{height:4px;border-radius:99px;background:linear-gradient(90deg,#fff var(--v),rgba(255,255,255,.22) var(--v))}
+.vol input::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;margin-top:-6px;border-radius:50%;background:#fff;box-shadow:0 1px 6px rgba(0,0,0,.45);transition:transform .3s var(--spring)}
+.vol input:active::-webkit-slider-thumb{transform:scale(1.18)}
+.vol input::-moz-range-track{height:4px;border-radius:99px;background:rgba(255,255,255,.22)}.vol input::-moz-range-progress{height:4px;border-radius:99px;background:#fff}
+.vol input::-moz-range-thumb{width:16px;height:16px;border:0;border-radius:50%;background:#fff}
+.next{display:grid;place-items:center;width:34px;height:34px;padding:0;border:0;border-radius:50%;background:transparent;color:var(--fg);transition:background .3s,transform .4s var(--spring)}
+.next:hover{background:rgba(255,255,255,.12)}.next:active{transform:translateX(2px) scale(.9)}
+.next svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* dock */
+.dock{bottom:max(20px,env(safe-area-inset-bottom));padding:4px;border:0;border-radius:999px;background:var(--glass);box-shadow:inset 0 0 0 1px rgba(255,255,255,.09),0 14px 44px rgba(0,0,0,.35);-webkit-backdrop-filter:blur(28px) saturate(180%);backdrop-filter:blur(28px) saturate(180%)}
+.dock a{padding:11px 22px;border-radius:999px;font-size:13px;font-weight:500;letter-spacing:0;text-transform:none}
+.ind{height:calc(100% - 8px);border-radius:999px;background:rgba(255,255,255,.17);box-shadow:none}
+/* type + sections */
+.lab{padding-bottom:12px;font-size:13px;font-weight:600;letter-spacing:0;text-transform:none;color:var(--dim)}
+.k{font-size:12px;font-weight:500;letter-spacing:0;text-transform:none}
+.blk p,.d-brief p{font-size:15px;font-weight:400;line-height:1.7;color:#d2d2d7}
+.dots-list{font-weight:400;line-height:1.9;color:#d2d2d7}
+.intro{font-size:15px;font-weight:400;line-height:1.7;color:var(--dim)}
+.pic .frame-img{border:0;border-radius:var(--r-card);box-shadow:0 0 0 1px var(--line)}
+.grid{gap:clamp(14px,2vw,22px)}
+.card{padding:8px;border:0;border-radius:var(--r-card);background:rgba(255,255,255,.045);box-shadow:inset 0 0 0 1px rgba(255,255,255,.07);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);transition:transform .6s var(--spring),box-shadow .6s var(--spring)}
+.card:hover{transform:translateY(-4px);box-shadow:inset 0 0 0 1px rgba(255,255,255,.15),0 26px 50px -22px rgba(0,0,0,.7)}
+.ph{border-radius:var(--r-media)}
+.meta{padding:14px 14px 12px;gap:10px}.meta h3{font-size:clamp(1.05rem,1.6vw,1.4rem);letter-spacing:-.04em}
+.meta .when{font-size:12px;letter-spacing:0;text-transform:none}.meta p{font-size:13px;line-height:1.55;font-weight:400}
+.tags li{padding:4px 10px;border:0;border-radius:999px;background:rgba(255,255,255,.07);font-size:11px;font-weight:500;letter-spacing:0;text-transform:none}
+.meta .go{margin-top:2px;font-size:13px;letter-spacing:0;text-transform:none}
+.back{padding:9px 16px 9px 12px;border:0;border-radius:999px;background:rgba(255,255,255,.08);font-size:13px;font-weight:500;letter-spacing:0;text-transform:none}.back:hover{background:rgba(255,255,255,.14);color:var(--fg)}
+.bx{border:0;border-radius:var(--r-card);box-shadow:0 0 0 1px var(--line)}.posts .bx{border-radius:var(--r-card)}
+.jrow,.posts{gap:clamp(10px,1.4vw,16px)}.jrow{margin-top:clamp(10px,1.4vw,16px)}
+.facts dt{font-size:12px}.facts dd{font-size:14px;font-weight:500}
+.d-next a{font-size:14px;letter-spacing:0;text-transform:none;border:0}.d-next a:hover{color:var(--accent)}
+.links a{padding:.6rem 1.1rem;border:0;border-radius:999px;background:rgba(255,255,255,.08);font-size:14px;font-weight:600}.links a:hover{background:rgba(255,255,255,.14);color:var(--fg)}
+.row .act{padding:.45rem .95rem;border:0;border-radius:999px;background:rgba(255,255,255,.08);font-size:12px}.row .act:hover{background:rgba(255,255,255,.14);color:var(--fg)}.row .act.ok{background:var(--accent);color:#140d0a}
+.row dd,.cred-grid p{font-weight:500}
+.concept-cover{position:relative;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(18px,2.8vw,38px);overflow:hidden;isolation:isolate}.concept-cover:before{content:"";position:absolute;inset:0;z-index:-1;opacity:.28;background-image:linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px);background-size:24px 24px;mask-image:linear-gradient(135deg,#000,transparent 80%)}.cover-kicker,.cover-foot{font-size:clamp(7px,.7vw,9px);letter-spacing:.16em;font-weight:600}.cover-foot{opacity:.72}.cover-word{font-family:var(--disp);font-weight:700;font-size:clamp(1.5rem,4vw,4rem);line-height:.88;letter-spacing:-.09em}.cover-word span{display:block;font-family:var(--mono);font-size:.24em;letter-spacing:.25em;margin-top:1.1em}.jade-cover{background:#d7c9a9;color:#1e2b24}.jade-cover:after{content:"";position:absolute;width:44%;aspect-ratio:1;border:1px solid rgba(30,43,36,.35);border-radius:50%;right:-7%;top:14%;box-shadow:0 0 0 16px rgba(30,43,36,.035),0 0 0 34px rgba(30,43,36,.035),0 0 0 52px rgba(30,43,36,.035)}.jade-cover .cover-mark{position:absolute;right:12%;top:27%;font-size:clamp(2rem,5vw,5rem);color:#b35a31;transform:rotate(-12deg)}.jade-cover:before{opacity:.12;background-size:18px 18px}.fold-cover{background:#f15b36;color:#21110d}.fold-cover:before{opacity:.2;background-size:32px 32px}.fold-cover .cover-word{font-size:clamp(2rem,5.2vw,5.2rem)}.fold-cover .cover-word span{font-size:9px}.fold-shape{position:absolute;width:42%;aspect-ratio:1.35;right:7%;top:22%;border:2px solid rgba(33,17,13,.7);transform:rotate(-33deg) skewX(-12deg);background:linear-gradient(135deg,rgba(255,245,221,.75) 0 49%,rgba(33,17,13,.08) 50%);box-shadow:18px 18px 0 rgba(33,17,13,.08);animation:foldFloat 8s ease-in-out infinite}.fold-shape:after{content:"";position:absolute;inset:18%;border:1px solid rgba(33,17,13,.55);transform:rotate(12deg)}@keyframes foldFloat{0%,100%{transform:translateY(0) rotate(-33deg) skewX(-12deg)}50%{transform:translateY(-9px) rotate(-28deg) skewX(-12deg)}}.social-cover{background:#e9e4dc;color:#171614;flex-direction:row;align-items:center;gap:20px}.social-cover:before{opacity:.28;background-size:18px 18px}.social-giant{font-family:var(--disp);font-size:clamp(2rem,6vw,6.8rem);line-height:.82;letter-spacing:-.1em;font-weight:700}.social-giant i{font-family:Georgia,serif;color:var(--accent);font-weight:400}.social-giant span{color:var(--accent)}.social-cover .cover-kicker{position:absolute;top:10%;left:4%}.social-cover .cover-foot{position:absolute;bottom:10%;left:4%}.social-grid-mark{margin-left:auto;font-size:clamp(3rem,8vw,9rem);color:var(--accent);animation:spin 20s linear infinite}.concept-detail{display:flex;flex-direction:column;justify-content:space-between;padding:clamp(20px,4vw,56px);min-height:240px;color:#f1eee8}.concept-detail>span,.concept-detail small{font-size:8px;letter-spacing:.15em;opacity:.72}.concept-detail strong{font-family:var(--disp);font-size:clamp(1.5rem,5vw,5rem);line-height:.94;letter-spacing:-.09em}.jade-detail{background:radial-gradient(circle at 80% 35%,rgba(205,179,125,.35),transparent 26%),#24382e}.jade-detail:after{content:"𓂀";position:absolute;right:12%;top:12%;font-size:clamp(4rem,12vw,12rem);color:rgba(220,196,151,.14)}.fold-detail{background:linear-gradient(115deg,#f15b36 0 55%,#d74322 55%);color:#21110d}.fold-detail:after{content:"";position:absolute;right:8%;top:15%;width:27%;height:65%;border:1px solid rgba(33,17,13,.5);transform:rotate(24deg) skewY(-12deg);box-shadow:12px 12px 0 rgba(33,17,13,.12)}.mini-detail{min-height:200px;background:#d7c9a9;color:#233127}.mini-detail strong{font-size:clamp(1.1rem,2.7vw,2.7rem)}.mini-detail:nth-child(2){background:#f15b36;color:#21110d}.mini-detail:nth-child(3){background:#202e27;color:#e9e4dc}.fold-mini{background:#f15b36;color:#21110d}.fold-mini:nth-child(2){background:#e9e4dc;color:#21110d}.fold-mini:nth-child(3){background:#171615;color:#f15b36}.concept-note{font-size:9px;line-height:1.7;color:#817c76;letter-spacing:.02em;margin:12px 0 0}
+.ph.concept-cover{border-radius:var(--r-media)}.concept-detail{border-radius:var(--r-card)}
+.bx.empty{animation:none}
+@media(max-width:720px){.page{padding:88px 20px 120px}.page-home{padding-top:110px}.audio-widget{top:max(12px,env(safe-area-inset-top));right:12px}.dock a{padding:10px 16px}}
+@media(prefers-reduced-motion:reduce){.audio-ctrl,.snd,.next,.card,.primary-cta{transition:none!important}}
+</style>
+
 </head>
 <body>
 
 
-<div class="app" id="app">
+<div class="app" id="app" aria-label="Stephen Hany design portfolio">
   <canvas id="dots" aria-hidden="true"></canvas>
   <div class="vig"></div>
   <div class="grain"></div>
   <div class="sweep" id="sweep"></div>
-  <button class="snd" id="snd" type="button" aria-label="Play background music" aria-pressed="false"><span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span></button>
+  <div class="audio-widget player" id="audioWidget">
+    <div class="audio-ctrl" id="audioPopover">
+      <div class="audio-inner">
+        <label class="vol" for="vol"><input type="range" id="vol" min="0" max="1" step="0.01" value="0.6" aria-label="Music volume"></label>
+        <button type="button" class="next" id="pNext" aria-label="Next track"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg></button>
+      </div>
+    </div>
+    <button class="snd" id="snd" type="button" aria-label="Play background music" aria-pressed="false" aria-controls="audioPopover" aria-expanded="false"><span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span></button>
+    <span class="sr" id="pName">future city</span><span class="sr" id="pHint"></span><output class="sr" id="volValue" for="vol">60%</output>
+  </div>
 
   <!-- ROOT -->
-  <main class="page" id="p-root" aria-label="root">
-    <h1 class="glitch" data-text="stephen hany" data-r><span>stephen hany</span></h1>
-    <div class="g-root">
-      <section class="blk tldr" data-r>
-        <h2 class="lab">tldr</h2>
-        <p>I’m a graphic designer who believes <span class="u">brands should feel human, not generic</span>. I take a project from first concept to final, applied identity.</p>
-      </section>
-      <section class="blk today" data-r>
-        <h2 class="lab">today</h2>
-        <p>At Mantaray Digital Solutions, I work as a <span class="u">brand designer, social media designer, motion graphic designer and campaign designer</span>. My work covers full branding, social media, printables and campaigns, structured so the marketing team only adds captions and hashtags.</p>
-      </section>
-      <section class="blk yest" data-r>
-        <h2 class="lab">yesterday</h2>
-        <p>I studied at the Faculty of Fine Arts, Decor Department, Asyut University. Since then I’ve built <span class="u">brand identities, packaging concepts, posters and illustrations</span>, including Plato, Sedge, Jadeite Coffee and Fold.</p>
-      </section>
-      <section class="blk bg" data-r>
-        <h2 class="lab">in the background</h2>
-        <div class="player" id="player">
-          <div class="nm"><span id="pName">future city</span><small id="pHint">ambient synth · press play</small></div>
-          <div class="pbtns">
-            <button type="button" id="pPrev" aria-label="Previous track"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 2h2v12H3zM14 2v12L6 8z"/></svg></button>
-            <button type="button" id="pPlay" aria-label="Play music"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2v12l10-6z"/></svg></button>
-            <button type="button" id="pPause" aria-label="Pause music"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 2h4v12H3zM9 2h4v12H9z"/></svg></button>
-            <button type="button" id="pNext" aria-label="Next track"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M11 2h2v12h-2zM2 2l8 6-8 6z"/></svg></button>
-          </div>
-        </div>
-        <label class="vol" for="vol">volume <input type="range" id="vol" min="0" max="1" step="0.01" value="0.6"></label>
-      </section>
+  <main class="page page-home" id="p-root" aria-label="home">
+    <div class="hero-kicker" data-r><span class="status-dot"></span> Independent designer · Asyut, Egypt</div>
+    <div class="hero-main">
+      <div class="hero-copy">
+        <h1 class="hero-display" data-r><span>Ideas with</span><span class="hero-second">a point <i>of</i> view<span class="hero-period">.</span></span></h1>
+        <p class="hero-description" data-r>I’m Stephen Hany — a graphic and 3D designer building <strong>human, concept-led identities</strong>, packaging and campaigns. I turn a clear idea into a visual system that feels distinct wherever it lives.</p>
+        <div class="hero-actions" data-r><a class="primary-cta" href="#work" data-go="work">Explore selected work <span aria-hidden="true">↗</span></a><a class="text-cta" href="#about" data-go="about">A little about me <span aria-hidden="true">↓</span></a></div>
+      </div>
+
     </div>
   </main>
 
@@ -338,7 +411,7 @@ a.card{color:inherit;text-decoration:none;cursor:pointer}
   <!-- WORK -->
   <main class="page" id="p-work" aria-label="work">
     <h1 class="glitch" data-text="work" data-r><span>work</span></h1>
-    <p class="intro" data-r>Six projects: brand identities, packaging concepts and social campaigns. Open any project to see its full set of visuals. Tiles marked as placeholders are waiting for their images.</p>
+    <p class="intro" data-r>A selection of identities, packaging concepts and campaigns. Each project opens into the thinking, visual system and applications behind the work.</p>
     <div class="grid">
       <div class="cell c7" data-r>
         <a class="card" href="#work-plato" data-go="work-plato">
@@ -364,7 +437,7 @@ a.card{color:inherit;text-decoration:none;cursor:pointer}
       </div>
       <div class="cell c4" data-r>
         <a class="card" href="#work-jadeite" data-go="work-jadeite">
-          <div class="ph empty" style="--r:4/3"><div class="slot"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="m21 16-5-5L7 20"/></svg><b>placeholder image</b><small>4:3 cover</small></div></div>
+          <div class="ph concept-cover jade-cover" style="--r:4/3"><span class="cover-kicker">IDENTITY STUDY / 02</span><span class="cover-word">JADEITE<span>COFFEE</span></span><span class="cover-mark">𓂀</span><span class="cover-foot">ORIGIN / RITUAL / SYMBOL</span></div>
           <div class="meta">
             <div class="top"><h3>jadeite coffee</h3></div>
             <p>An Egyptian-inspired coffee brand built around Horus symbolism.</p>
@@ -375,7 +448,7 @@ a.card{color:inherit;text-decoration:none;cursor:pointer}
       </div>
       <div class="cell c4" data-r>
         <a class="card" href="#work-fold" data-go="work-fold">
-          <div class="ph empty" style="--r:4/3"><div class="slot"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="m21 16-5-5L7 20"/></svg><b>placeholder image</b><small>4:3 cover</small></div></div>
+          <div class="ph concept-cover fold-cover" style="--r:4/3"><span class="cover-kicker">PACKAGING CONCEPT / 03</span><span class="fold-shape"></span><span class="cover-word">FOLD<span>PIZZA, RE-FOLDED.</span></span><span class="cover-foot">ONE SLICE. ONE IDEA.</span></div>
           <div class="meta">
             <div class="top"><h3>fold</h3></div>
             <p>A pizza brand and packaging concept based on a folded NY-style slice.</p>
@@ -397,7 +470,7 @@ a.card{color:inherit;text-decoration:none;cursor:pointer}
       </div>
       <div class="cell c12" data-r>
         <a class="card" href="#work-social" data-go="work-social">
-          <div class="ph empty" style="--r:21/9"><div class="slot"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="m21 16-5-5L7 20"/></svg><b>placeholder image</b><small>21:9 wide cover</small></div></div>
+          <div class="ph concept-cover social-cover" style="--r:21/9"><span class="cover-kicker">CAMPAIGNS / SOCIAL SYSTEMS</span><span class="social-giant">MAKE<br>IT <i>MEAN</i><br>SOMETHING<span>.</span></span><span class="cover-foot">PLATO / MANTARAY DIGITAL SOLUTIONS</span><span class="social-grid-mark">✳</span></div>
           <div class="meta">
             <div class="top"><h3>social media work</h3></div>
             <p>Brand-driven social content and campaigns for Plato and Mantaray Digital Solutions.</p>
@@ -436,10 +509,10 @@ a.card{color:inherit;text-decoration:none;cursor:pointer}
     <a class="back" href="#work" data-go="work" data-r><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13 8H3M7 4 3 8l4 4"/></svg> back to work</a>
     <h1 class="glitch" data-text="jadeite coffee" data-r><span>jadeite coffee</span></h1>
     <div class="d-head" data-r>
-      <section class="d-brief"><h2 class="lab">brief</h2><p>Jadeite Coffee is an Egyptian-inspired coffee brand built around Horus symbolism.</p><p>The concept covers the logo and packaging. The visuals below are placeholders until the final images are added.</p></section>
+      <section class="d-brief"><h2 class="lab">brief</h2><p>Jadeite Coffee is an Egyptian-inspired coffee brand built around Horus symbolism.</p><p>The concept covers the logo and packaging. This concept is still in development; the presentation uses clearly labelled direction boards until final artwork is ready.</p></section>
       <section><h2 class="lab">project</h2><dl class="facts"><div><dt>scope</dt><dd>Branding, logo, packaging</dd></div><div><dt>inspiration</dt><dd>Horus symbolism, Egyptian visual culture</dd></div></dl></section>
     </div>
-    <section class="d-sec" data-r><h2 class="lab">hero</h2><div class="jrow"><figure class="bx empty" style="--n:2.333" data-ph="21:9 hero"></figure></div></section><section class="d-sec" data-r><h2 class="lab">logo &amp; packaging</h2><div class="jrow"><figure class="bx empty" style="--n:1.333" data-ph="4:3 visual"></figure><figure class="bx empty" style="--n:1.333" data-ph="4:3 visual"></figure><figure class="bx empty" style="--n:1.333" data-ph="4:3 visual"></figure></div><div class="jrow"><figure class="bx empty" style="--n:1.6" data-ph="16:10 visual"></figure><figure class="bx empty" style="--n:1.6" data-ph="16:10 visual"></figure></div></section>
+    <section class="d-sec" data-r><h2 class="lab">hero</h2><div class="jrow"><figure class="bx concept-detail jade-detail" style="--n:2.333"><span>JADEITE / COFFEE</span><strong>ROOTED IN<br>SYMBOLISM.</strong><small>CONCEPT COVER — FINAL VISUALS TO BE ADDED</small></figure></div></section><section class="d-sec" data-r><h2 class="lab">logo &amp; packaging</h2><div class="jrow"><figure class="bx concept-detail mini-detail" style="--n:1.333"><span>01 / MARK</span><strong>THE<br>SYMBOL</strong></figure><figure class="bx concept-detail mini-detail" style="--n:1.333"><span>02 / SYSTEM</span><strong>FORM<br>&amp; TYPE</strong></figure><figure class="bx concept-detail mini-detail" style="--n:1.333"><span>03 / PACK</span><strong>FROM<br>ORIGIN</strong></figure></div><p class="concept-note">Concept placeholders are used here to keep the presentation intentional until final project artwork is supplied.</p></section>
     <nav class="d-next" data-r aria-label="More projects"><a href="#work-sedge" data-go="work-sedge">← sedge</a><a href="#work-fold" data-go="work-fold">fold →</a></nav>
   </main>
 
@@ -447,10 +520,10 @@ a.card{color:inherit;text-decoration:none;cursor:pointer}
     <a class="back" href="#work" data-go="work" data-r><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13 8H3M7 4 3 8l4 4"/></svg> back to work</a>
     <h1 class="glitch" data-text="fold" data-r><span>fold</span></h1>
     <div class="d-head" data-r>
-      <section class="d-brief"><h2 class="lab">brief</h2><p>Fold is a pizza brand and packaging concept based on a single folded NY-style slice.</p><p>The visuals below are placeholders until the final images are added.</p></section>
+      <section class="d-brief"><h2 class="lab">brief</h2><p>Fold is a pizza brand and packaging concept based on a single folded NY-style slice.</p><p>This concept is still in development; the presentation uses clearly labelled direction boards until final artwork is ready.</p></section>
       <section><h2 class="lab">project</h2><dl class="facts"><div><dt>scope</dt><dd>Branding, packaging</dd></div><div><dt>concept</dt><dd>A single folded NY-style slice</dd></div></dl></section>
     </div>
-    <section class="d-sec" data-r><h2 class="lab">hero</h2><div class="jrow"><figure class="bx empty" style="--n:2.333" data-ph="21:9 hero"></figure></div></section><section class="d-sec" data-r><h2 class="lab">brand &amp; packaging</h2><div class="jrow"><figure class="bx empty" style="--n:1.333" data-ph="4:3 visual"></figure><figure class="bx empty" style="--n:1.333" data-ph="4:3 visual"></figure><figure class="bx empty" style="--n:1.333" data-ph="4:3 visual"></figure></div><div class="jrow"><figure class="bx empty" style="--n:1.6" data-ph="16:10 visual"></figure><figure class="bx empty" style="--n:1.6" data-ph="16:10 visual"></figure></div></section>
+    <section class="d-sec" data-r><h2 class="lab">hero</h2><div class="jrow"><figure class="bx concept-detail fold-detail" style="--n:2.333"><span>FOLD / PIZZA</span><strong>THE ART OF<br>THE FOLD.</strong><small>CONCEPT COVER — FINAL VISUALS TO BE ADDED</small></figure></div></section><section class="d-sec" data-r><h2 class="lab">brand &amp; packaging</h2><div class="jrow"><figure class="bx concept-detail mini-detail fold-mini" style="--n:1.333"><span>01 / BRAND</span><strong>FOLD<br>THE RULES</strong></figure><figure class="bx concept-detail mini-detail fold-mini" style="--n:1.333"><span>02 / PACK</span><strong>BUILT<br>TO HOLD</strong></figure><figure class="bx concept-detail mini-detail fold-mini" style="--n:1.333"><span>03 / SYSTEM</span><strong>LESS,<br>BETTER</strong></figure></div><p class="concept-note">Concept placeholders are used here to keep the presentation intentional until final project artwork is supplied.</p></section>
     <nav class="d-next" data-r aria-label="More projects"><a href="#work-jadeite" data-go="work-jadeite">← jadeite coffee</a><a href="#work-steve" data-go="work-steve">steve →</a></nav>
   </main>
 
@@ -458,7 +531,7 @@ a.card{color:inherit;text-decoration:none;cursor:pointer}
     <a class="back" href="#work" data-go="work" data-r><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13 8H3M7 4 3 8l4 4"/></svg> back to work</a>
     <h1 class="glitch" data-text="steve (ستيف)" data-r><span>steve (ستيف)</span></h1>
     <div class="d-head" data-r>
-      <section class="d-brief"><h2 class="lab">brief</h2><p>Steve is a personal identity built around my own name and design voice.</p><p>The visuals below are placeholders until the final images are added.</p></section>
+      <section class="d-brief"><h2 class="lab">brief</h2><p>Steve is a personal identity built around my own name and design voice.</p><p>This concept is still in development; the presentation uses clearly labelled direction boards until final artwork is ready.</p></section>
       <section><h2 class="lab">project</h2><dl class="facts"><div><dt>scope</dt><dd>Personal brand, logo</dd></div><div><dt>name</dt><dd>Steve (ستيف)</dd></div></dl></section>
     </div>
     <section class="d-sec" data-r><h2 class="lab">identity</h2><div class="jrow"><figure class="bx" style="--n:1.944"><img data-k="about-photo" alt="Steve personal identity: an orange motion-blurred portrait with the Arabic wordmark in the centre"></figure><figure class="bx empty" style="--n:1.5" data-ph="3:2 visual"></figure><figure class="bx empty" style="--n:1.5" data-ph="3:2 visual"></figure></div><div class="jrow"><figure class="bx empty" style="--n:1.6" data-ph="16:10 visual"></figure><figure class="bx empty" style="--n:1.6" data-ph="16:10 visual"></figure><figure class="bx empty" style="--n:1.6" data-ph="16:10 visual"></figure></div></section>
@@ -511,11 +584,6 @@ a.card{color:inherit;text-decoration:none;cursor:pointer}
       </section>
     </div>
   </main>
-
-  <footer class="foot">
-    <span>© 2026 Stephen Hany</span>
-    <nav aria-label="Elsewhere"><a href="https://www.behance.net/xzig">Behance</a><a href="https://www.instagram.com/_steve_hany_">Instagram</a><span>Asyut, Egypt</span></nav>
-  </footer>
 
   <nav class="dock" id="dock" aria-label="Pages">
     <span class="ind" id="ind" aria-hidden="true"></span>
@@ -601,6 +669,7 @@ a.card{color:inherit;text-decoration:none;cursor:pointer}
         if (mode === 0) v = 0.5 + 0.58 * ((cx[i] + rj + dg[i + j]) / 3);
         else if (mode === 1) { var s = 0.5 + 0.5 * Math.sin((i * 0.5 + j * 0.8) * 0.16 - t * 1.7); v = s * s * s * 1.15; }
         else { var d = dist[row + i]; v = (0.5 + 0.5 * Math.sin(d * 0.34 - t * 2.2)) * Math.max(0.15, 1 - d / (maxd * 0.9)); }
+        v = 0.5 + (v - 0.5) * (1 + lvl * 0.55) + lvl * 0.05;
         var ddx = i - pxg, d2 = ddx * ddx + dyy * dyy, inf = 0;
         if (d2 < R2) { var q = 1 - Math.sqrt(d2) / R; inf = q * q * (3 - 2 * q); }
         v += inf * 0.45;
@@ -634,7 +703,10 @@ a.card{color:inherit;text-decoration:none;cursor:pointer}
     var px = ptr.x, py = ptr.y;
     ptr.x += (ptr.tx - ptr.x) * Math.min(1, dt * 10); ptr.y += (ptr.ty - ptr.y) * Math.min(1, dt * 10);
     if (Math.abs(ptr.x - px) > 0.05 || Math.abs(ptr.y - py) > 0.05) dirty = true;
-    t += dt * speed * (1 + boost * 5);
+    var lt = 0;
+    if (playing && an) { an.getByteFrequencyData(anData); var sum = 0; for (var q = 1; q < 12; q++) sum += anData[q]; lt = Math.min(1, sum / 11 / 255 * 1.5); }
+    lvl += (lt - lvl) * Math.min(1, dt * (lt > lvl ? 9 : 3));
+    t += dt * speed * (1 + boost * 5 + lvl * 0.5);
     if (!document.hidden && (speed > 0.004 || boost > 0.01 || dirty)) { draw(); dirty = false; }
     requestAnimationFrame(loop);
   }
@@ -662,7 +734,7 @@ a.card{color:inherit;text-decoration:none;cursor:pointer}
       arp: { every: 1, notes: [3,2,1,0,1,2,3,2,1,0,1,2,3,3,2,1], oct: 24, wave: 'square', len: 0.1, gain: 0.03, cut: 3200 },
       kick: [0,4,8,12], snare: [4,12], hat: [2,6,10,14], bass: [0,2,6,8,10,14] }
   ];
-  var trackIdx = 0, playing = false, ac = null, vol, comp, dry, dsend, rsend, dly, noiseBuf, timer = null, nextT = 0, stepN = 0, stopTok = 0, soundOk = true;
+  var an = null, anData = null, lvl = 0, trackIdx = 0, playing = false, ac = null, vol, comp, dry, dsend, rsend, dly, noiseBuf, timer = null, nextT = 0, stepN = 0, stopTok = 0, soundOk = true;
   var volEl = document.getElementById('vol');
   function mtof(m){ return 440 * Math.pow(2, (m - 69) / 12); }
   function has(arr, v){ return arr.indexOf(v) !== -1; }
@@ -676,6 +748,7 @@ a.card{color:inherit;text-decoration:none;cursor:pointer}
       comp = ac.createDynamicsCompressor(); comp.threshold.value = -18; comp.ratio.value = 4; comp.attack.value = 0.01; comp.release.value = 0.2;
       vol = ac.createGain(); vol.gain.value = 0;
       comp.connect(vol); vol.connect(ac.destination);
+      an = ac.createAnalyser(); an.fftSize = 256; an.smoothingTimeConstant = 0.85; comp.connect(an); anData = new Uint8Array(an.frequencyBinCount);
       dry = ac.createGain(); dry.gain.value = 1; dry.connect(comp);
       dsend = ac.createGain(); dsend.gain.value = 1;
       dly = ac.createDelay(1.5); dly.delayTime.value = 0.4;
@@ -752,7 +825,7 @@ a.card{color:inherit;text-decoration:none;cursor:pointer}
   }
   function pulseAt(t0){
     if (reduce) return;
-    setTimeout(function(){ boost = Math.max(boost, 0.32); dirty = true; }, Math.max(0, (t0 - ac.currentTime) * 1000));
+    setTimeout(function(){ boost = Math.max(boost, 0.1); dirty = true; }, Math.max(0, (t0 - ac.currentTime) * 1000));
   }
   function schedule(st, t0){
     var tr = TRACKS[trackIdx], step = 60 / tr.bpm / 4;
@@ -812,25 +885,43 @@ a.card{color:inherit;text-decoration:none;cursor:pointer}
     else if (playing) { ac.resume(); nextT = ac.currentTime + 0.05; }
   });
 
-  var player = document.getElementById('player');
+  var player = document.getElementById('audioWidget');
   var pName = document.getElementById('pName');
   var pHint = document.getElementById('pHint');
   var sndBtn = document.getElementById('snd');
+  var audioWidget = document.getElementById('audioWidget');
+  var volValue = document.getElementById('volValue');
   function syncUI(){
     pName.textContent = TRACKS[trackIdx].name;
     pHint.textContent = soundOk ? ('ambient synth · ' + (playing ? 'playing' : 'paused') + ' · ' + MODES[mode] + ' dots') : 'sound is not available in this browser';
     player.classList.toggle('playing', playing);
     sndBtn.classList.toggle('on', playing);
     sndBtn.setAttribute('aria-pressed', playing ? 'true' : 'false');
-    sndBtn.setAttribute('aria-label', playing ? 'Pause background music' : 'Play background music');
+    sndBtn.setAttribute('aria-label', (playing ? 'Pause music' : 'Play music') + ' — ' + TRACKS[trackIdx].name); sndBtn.title = TRACKS[trackIdx].name;
+    volEl.style.setProperty('--v', (parseFloat(volEl.value || 0) * 100) + '%');
+    if (volValue) volValue.textContent = Math.round(parseFloat(volEl.value || 0) * 100) + '%';
   }
   function toggleMusic(){ if (playing) stopMusic(); else startMusic(); }
-  document.getElementById('pPrev').addEventListener('click', function(){ setTrack(trackIdx - 1); });
-  document.getElementById('pNext').addEventListener('click', function(){ setTrack(trackIdx + 1); });
-  document.getElementById('pPlay').addEventListener('click', startMusic);
-  document.getElementById('pPause').addEventListener('click', stopMusic);
+  sndBtn.addEventListener('click', function(){
+    if (window.matchMedia && window.matchMedia('(hover: none)').matches) {
+      var opening = !audioWidget.classList.contains('open');
+      audioWidget.classList.toggle('open', opening);
+      sndBtn.setAttribute('aria-expanded', opening ? 'true' : 'false');
+    }
+  });
+  document.addEventListener('click', function(e){
+    if (audioWidget && !audioWidget.contains(e.target)) {
+      audioWidget.classList.remove('open');
+      sndBtn.setAttribute('aria-expanded', 'false');
+    }
+  });
+    document.getElementById('pNext').addEventListener('click', function(){ setTrack(trackIdx + 1); });
   sndBtn.addEventListener('click', toggleMusic);
-  volEl.addEventListener('input', function(){ if (ac && playing) vol.gain.setTargetAtTime(currentVol(), ac.currentTime, 0.05); });
+  volEl.addEventListener('input', function(){
+    volEl.style.setProperty('--v', (parseFloat(volEl.value || 0) * 100) + '%');
+    if (volValue) volValue.textContent = Math.round(parseFloat(volEl.value || 0) * 100) + '%';
+    if (ac && playing) vol.gain.setTargetAtTime(currentVol(), ac.currentTime, 0.05);
+  });
   syncUI();
 
   /* ---------- dock indicator ---------- */
